@@ -4,7 +4,7 @@ Microservicio para autenticación de usuarios usando Node.js, MongoDB y Redis.
 
 ## 🧱 Arquitectura
 
-Este microservicio forma parte de un sistema basado en microservicios, siguiendo una arquitectura orientada a eventos con Redis (Pub/Sub). Se conecta a una base de datos MongoDB para validar credenciales y publica eventos de login exitoso.
+Este microservicio forma parte de un sistema basado en microservicios, siguiendo una arquitectura orientada a eventos con Redis (Pub/Sub). Se conecta a una base de datos MongoDB subida a un ec2 para validar credenciales y publica eventos de login exitoso.
 
 
 ## ⚙️ Tecnologías
