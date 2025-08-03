@@ -13,3 +13,7 @@ describe('publishLoginEvent', () => {
     await expect(publishLoginEvent('1234567890')).resolves.toBeUndefined();
   });
 });
+
+afterAll(() => {
+  jest.resetAllMocks();
+});
