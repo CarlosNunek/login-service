@@ -1,0 +1,27 @@
+name: Deploy QA – login-service
+
+on:
+  push:
+    branches: [ qa ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: qa
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2 using DockerHub image
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            IMAGE_TAG=${{ github.sha }}
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/login-service:$IMAGE_TAG
+            docker stop login-service || true
+            docker rm login-service || true
+            docker run -d --restart always --name login-service -p 4000:4000 --env-file .env ${{ secrets.DOCKERHUB_USERNAME }}/login-service:$IMAGE_TAG

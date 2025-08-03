@@ -1,0 +1,22 @@
+# Dependencias locales
+node_modules
+npm-debug.log
+
+# Archivos sensibles o innecesarios
+Dockerfile
+.dockerignore
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de Git
+.git
+.gitignore
+
+# Editor config
+.vscode
+*.swp
+*.swo
+*.bak
+*.tmp

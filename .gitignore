@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Logs
+logs
+*.log
+
+# SO
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
